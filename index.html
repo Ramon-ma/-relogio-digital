@@ -58,6 +58,13 @@
         // Chama a função imediatamente para não esperar 1 segundo ao carregar
         atualizarRelogio();
     </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log("App pronto para instalar!"))
+      .catch((err) => console.log("Erro no registro:", err));
+  }
+</script>
 
 </body>
 </html>
